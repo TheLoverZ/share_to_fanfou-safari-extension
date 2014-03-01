@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+  Hello World
+</title>
+<script type="text/javascript" charset="utf-8">
+
+function performCommand(event)
+{
+    if (event.command === "share")
+    {
+        var url = this.activeBrowserWindow.activeTab.url;
+        var title = this.activeBrowserWindow.activeTab.title;
+        var newTab = this.activeBrowserWindow.openTab();
+        newTab.url = "http://fanfou.com/sharer?u=" + url + "&t=" + title + "&s=bm&d=";
+    }
+}
+
+safari.application.addEventListener("command", performCommand, false);
+</script>
+</head>
+<body>
+</body>
+</html>
